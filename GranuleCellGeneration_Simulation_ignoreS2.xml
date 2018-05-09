@@ -224,7 +224,6 @@
 <parameter metaid="aP" id="aP" name="aP" value="0.01" units="substance"/>
 <parameter metaid="aE" id="aE" name="aE" value="0.05" units="substance"/>
 <parameter metaid="e" id="e" name="e" value="0.4" units="substance"/>
-<parameter metaid="f" id="f" name="f" value="0.1" units="substance"/>
 </listOfParameters>
 <listOfReactions>
 <reaction metaid="re3" id="re3" name="N,N_type_increase iEGL" reversible="false" fast="false">
@@ -373,19 +372,14 @@
 </speciesReference>
 </listOfProducts>
 <kineticLaw metaid="CDMT00003">
-<annotation/>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <apply>
 <times/>
 <ci> aP </ci>
 <apply>
 <minus/>
-<apply>
-<minus/>
 <cn type="integer"> 1 </cn>
 <ci> e </ci>
-</apply>
-<ci> f </ci>
 </apply>
 <ci> s7 </ci>
 </apply>
@@ -439,59 +433,6 @@
 <times/>
 <ci> aP </ci>
 <ci> e </ci>
-<ci> s7 </ci>
-</apply>
-</math>
-</kineticLaw>
-</reaction>
-<reaction metaid="re7" id="re7" name="P,N_type_increase iEGL" reversible="false" fast="false">
-<annotation>
-<celldesigner:extension>
-<celldesigner:name>P,N_type_increase iEGL</celldesigner:name>
-<celldesigner:reactionType>STATE_TRANSITION</celldesigner:reactionType>
-<celldesigner:baseReactants>
-<celldesigner:baseReactant species="s5" alias="sa5">
-<celldesigner:linkAnchor position="NW"/>
-</celldesigner:baseReactant>
-</celldesigner:baseReactants>
-<celldesigner:baseProducts>
-<celldesigner:baseProduct species="s2" alias="sa2">
-<celldesigner:linkAnchor position="SSW"/>
-</celldesigner:baseProduct>
-</celldesigner:baseProducts>
-<celldesigner:connectScheme connectPolicy="direct" rectangleIndex="0">
-<celldesigner:listOfLineDirection>
-<celldesigner:lineDirection index="0" value="unknown"/>
-</celldesigner:listOfLineDirection>
-</celldesigner:connectScheme>
-<celldesigner:line width="1.0" color="ff000000"/>
-</celldesigner:extension>
-</annotation>
-<listOfReactants>
-<speciesReference metaid="CDMT00018" species="s5">
-<annotation>
-<celldesigner:extension>
-<celldesigner:alias>sa5</celldesigner:alias>
-</celldesigner:extension>
-</annotation>
-</speciesReference>
-</listOfReactants>
-<listOfProducts>
-<speciesReference metaid="CDMT00019" species="s2">
-<annotation>
-<celldesigner:extension>
-<celldesigner:alias>sa2</celldesigner:alias>
-</celldesigner:extension>
-</annotation>
-</speciesReference>
-</listOfProducts>
-<kineticLaw metaid="CDMT00020">
-<annotation/>
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<apply>
-<times/>
-<ci> aP </ci>
-<ci> f </ci>
 <ci> s7 </ci>
 </apply>
 </math>

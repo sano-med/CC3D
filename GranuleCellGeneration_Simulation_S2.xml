@@ -164,7 +164,7 @@
 </compartment>
 </listOfCompartments>
 <listOfSpecies>
-<species metaid="s2" id="s2" name="iEGL" compartment="c1" initialAmount="0">
+<species metaid="s2" id="s2" name="iEGL" compartment="c1" initialAmount="1">
 <annotation>
 <celldesigner:extension>
 <celldesigner:positionToCompartment>inside</celldesigner:positionToCompartment>
@@ -221,10 +221,10 @@
 </species>
 </listOfSpecies>
 <listOfParameters>
-<parameter metaid="aP" id="aP" name="aP" value="0.01" units="substance"/>
-<parameter metaid="aE" id="aE" name="aE" value="0.05" units="substance"/>
-<parameter metaid="e" id="e" name="e" value="0.4" units="substance"/>
-<parameter metaid="f" id="f" name="f" value="0.1" units="substance"/>
+<parameter metaid="aP" id="aP" name="aP" value="0.08" units="substance"/>
+<parameter metaid="aE" id="aE" name="aE" value="0.052" units="substance"/>
+<parameter metaid="e" id="e" name="e" value="0.45" units="substance"/>
+<parameter metaid="f" id="f" name="f" value="0" units="substance"/>
 </listOfParameters>
 <listOfReactions>
 <reaction metaid="re3" id="re3" name="N,N_type_increase iEGL" reversible="false" fast="false">
@@ -373,7 +373,6 @@
 </speciesReference>
 </listOfProducts>
 <kineticLaw metaid="CDMT00003">
-<annotation/>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <apply>
 <times/>
@@ -486,7 +485,6 @@
 </speciesReference>
 </listOfProducts>
 <kineticLaw metaid="CDMT00020">
-<annotation/>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <apply>
 <times/>
