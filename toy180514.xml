@@ -1,0 +1,95 @@
+<CompuCell3D Revision="20171121" Version="3.7.7">
+   
+   <Potts>
+      
+      <!-- Basic properties of CPM (GGH) algorithm -->
+      <Dimensions x="100" y="100" z="1"/>
+      <Steps>1000</Steps>
+      <NeighborOrder>1</NeighborOrder>
+   </Potts>
+   
+   <Plugin Name="CellType">
+      
+      <!-- Listing all cell types in the simulation -->
+      <CellType TypeId="0" TypeName="Medium"/>
+      <CellType TypeId="1" TypeName="P"/>
+      <CellType TypeId="2" TypeName="N"/>    
+      <CellType TypeId="3" TypeName="S"/>
+   </Plugin>
+   
+   <Plugin Name="Volume">
+      <VolumeEnergyParameters CellType="P" LambdaVolume="2.0" TargetVolume="25"/>
+      <VolumeEnergyParameters CellType="N" LambdaVolume="2.0" TargetVolume="25"/>
+      <VolumeEnergyParameters CellType="S" LambdaVolume="2.0" TargetVolume="25"/>
+   </Plugin>
+   
+   <Plugin Name="Surface">
+      <SurfaceEnergyParameters CellType="P" LambdaSurface="2.0" TargetSurface="25"/>
+      <SurfaceEnergyParameters CellType="N" LambdaSurface="2.0" TargetSurface="25"/>
+      <SurfaceEnergyParameters CellType="S" LambdaSurface="2.0" TargetSurface="25"/>
+   </Plugin>
+   
+   <Plugin Name="CenterOfMass">
+      <!-- Module tracking center of mass of each cell -->
+   </Plugin>
+   
+   <Plugin Name="Contact">
+      <Energy Type1="Medium" Type2="Medium">2.0</Energy>
+      <Energy Type1="Medium" Type2="P">2.0</Energy>
+      <Energy Type1="Medium" Type2="N">2.0</Energy>
+      <Energy Type1="Medium" Type2="S">100.0</Energy>
+      <Energy Type1="P" Type2="P">10.0</Energy>
+      <Energy Type1="N" Type2="N">10.0</Energy>
+      <Energy Type1="S" Type2="S">100.0</Energy>      
+      <Energy Type1="P" Type2="N">50</Energy>
+      <Energy Type1="P" Type2="S">100.0</Energy>
+      <Energy Type1="N" Type2="S">100.0</Energy>
+      <NeighborOrder>1</NeighborOrder>
+    </Plugin>
+   
+   <Steppable Type="UniformInitializer">
+      <!-- Initial layout of cells in the form of rectangular slab -->
+      <Region>
+         <BoxMin x="0" y="0" z="0"/>
+         <BoxMax x="20" y="60" z="1"/>
+         <Gap>0</Gap>
+         <Width>5</Width>
+         <Types>P</Types>
+      </Region>
+      <Region>
+         <BoxMin x="20" y="0" z="0"/>
+         <BoxMax x="40" y="60" z="1"/>
+         <Gap>0</Gap>
+         <Width>5</Width>
+         <Types>N</Types>
+      </Region>
+      <Region>
+         <BoxMin x="40" y="0" z="0"/>
+         <BoxMax x="60" y="60" z="1"/>
+         <Gap>0</Gap>
+         <Width>5</Width>
+         <Types>P</Types>
+      </Region>
+      <Region>
+         <BoxMin x="60" y="0" z="0"/>
+         <BoxMax x="80" y="60" z="1"/>
+         <Gap>0</Gap>
+         <Width>5</Width>
+         <Types>N</Types>
+      </Region>
+      <Region>
+         <BoxMin x="80" y="0" z="0"/>
+         <BoxMax x="100" y="60" z="1"/>
+         <Gap>0</Gap>
+         <Width>5</Width>
+         <Types>P</Types>
+      </Region>
+      <Region>
+         <BoxMin x="0" y="60" z="0"/>
+         <BoxMax x="100" y="65" z="1"/>
+         <Gap>0</Gap>
+         <Width>5</Width>
+         <Types>S</Types>
+      </Region>
+   </Steppable>
+</CompuCell3D>
