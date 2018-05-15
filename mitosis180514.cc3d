@@ -1,0 +1,5 @@
+<Simulation version="3.6.2">
+   <XMLScript Type="XMLScript">Simulation/mitosis180514.xml</XMLScript>
+   <PythonScript Type="PythonScript">Simulation/mitosis180514.py</PythonScript>
+   <Resource Type="Python">Simulation/mitosis180514Steppables.py</Resource>
+</Simulation>
