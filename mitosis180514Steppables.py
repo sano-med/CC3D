@@ -85,6 +85,6 @@ class MitosisSteppable(MitosisSteppableBase):
         
         mcs=self.simulator.getStep()
         mitData=MitosisData(mcs,self.parentCell.id,self.parentCell.type,self.childCell.id,self.childCell.type)
-        parentCellList.append(mitData)
-        childCellList.append(mitData)
+        #parentCellList.append(mitData)
+        #childCellList.append(mitData)
         
